@@ -35,7 +35,7 @@ export async function isEmailExist(email) {
   return result.length > 0;
 }
 
-export async function editUser(id, name, email) {
-    const [result] = await pool.query("UPDATE user SET nama = ?, email = ? WHERE id_user = ?", [name, email, id])
+export async function editUser(id, name, phone, email) {
+    const [result] = await pool.query("UPDATE user SET nama = ?, nomor_hp = ?, email = ? WHERE id_user = ?", [name, phone, email, id])
     return result.changedRows
 }

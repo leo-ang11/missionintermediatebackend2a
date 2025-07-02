@@ -30,7 +30,6 @@ app.get('/user/:id', async (req, res) => {
 app.post("/user", async (req, res) => {
     try {
         const { name, email, phone, password } = req.body
-        // cek if email already exist
         if (await isEmailExist(email)) {
             return res.status(400).json({ message: 'Email already exist' });
         }
@@ -66,14 +65,14 @@ app.delete("/user/:id", async (req, res) => {
 app.patch("/user/:id", async (req, res) => {
     try {
         const id = req.params.id;
-        const { name, email } = req.body;
+        const { name, phone, email } = req.body;
 
         const existingUser = await getUserId(id);
         if (!existingUser) {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        const updated = await editUser(id, name, email);
+        const updated = await editUser(id, name, phone, email);
         if (updated > 0) {
             res.json({ message: 'User updated successfully' });
         } else {
