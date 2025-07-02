@@ -35,7 +35,7 @@ npm install
 npm run dev
 
 
-## Uji Coba API (gunakan Postman )
+## Endpoint API (uji coba dengan menggunakan Postman)
 • GET all users
 GET http://localhost:8080/user
 
