@@ -8,6 +8,10 @@ REST API sederhana menggunakan Express dan MySQL.
 
 Buat file `.env` di root folder, lalu isi dengan konfigurasi berikut:
 
+MYSQL_HOST='localhost'
+MYSQL_USER='root'
+MYSQL_PASSWORD=''
+MYSQL_DATABASE='video_belajar'
 
 ---
 
